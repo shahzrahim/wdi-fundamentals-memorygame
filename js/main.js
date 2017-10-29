@@ -5,21 +5,31 @@ var cards = ["queen", "queen", "king", "king"];
 
 var cardsInPlay = [];
 
-var cardOne = cards[3];
-var cardTwo = cards[1];
-
-cardsInPlay.push(cardOne);
-cardsInPlay.push(cardTwo);
-
-console.log("user flipped queen");
-
-console.log("user flipped king");
-
-if(cardsInPlay.length === 2) {
+function checkForMatch() {
+	if(cardsInPlay.length === 2) {
 	if(cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You have found a match!");
 	} else {
 		alert("Sorry, try again.");
 	}
+	}
 }
+
+
+function flipCard(cardId) {
+	console.log("User flipped " + cards[cardId]);
+	cardsInPlay.push(cards[cardId]);
+	checkForMatch();
+}
+
+flipCard(0);
+flipCard(2);
+
+
+
+// console.log("user flipped queen");
+
+// console.log("user flipped king");
+
+
 // testing commit action
